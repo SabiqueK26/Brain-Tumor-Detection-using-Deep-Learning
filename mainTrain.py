@@ -12,8 +12,8 @@ from keras.utils import to_categorical
 
 image_directory='datasets/'
 
-no_tumor_images = os.listdir(image_directory + 'no/')
-yes_tumor_images = os.listdir(image_directory + 'yes/')
+no_tumor_images = os.listdir(image_directory+ 'no/')
+yes_tumor_images = os.listdir(image_directory+ 'yes/')
 dataset = []
 label = []
 INPUT_SIZE = 64
@@ -25,7 +25,7 @@ INPUT_SIZE = 64
 
 for i, image_name in enumerate(no_tumor_images):
     if(image_name.split('.')[1] == 'jpg'):
-        image = cv2.imread(image_directory + 'no/' + image_name)
+        image = cv2.imread(image_directory+'no/'+image_name)
         image = Image.fromarray(image, 'RGB')
         image = image.resize((INPUT_SIZE,INPUT_SIZE))
         dataset.append(np.array(image))
@@ -33,7 +33,7 @@ for i, image_name in enumerate(no_tumor_images):
         
 for i, image_name in enumerate(yes_tumor_images):
     if(image_name.split('.')[1] == 'jpg'):
-        image = cv2.imread(image_directory + 'yes/' + image_name)
+        image = cv2.imread(image_directory+'yes/'+image_name)
         image = Image.fromarray(image, 'RGB')
         image = image.resize((INPUT_SIZE,INPUT_SIZE))
         dataset.append(np.array(image))
@@ -82,6 +82,6 @@ model.add(Activation('softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # Model Fitting
-model.fit(x_train, y_train, batch_size=26, verbose=1, epochs=10, validation_data=(x_test,y_test), shuffle=False)
+model.fit(x_train, y_train, batch_size=26, verbose=1, epochs=10, validation_data=(x_test, y_test), shuffle=False)
 
 model.save('BrainTumor10EpocsCategorical.h5')
