@@ -1,6 +1,6 @@
 # Brain-Tumor-Detection-using-Deep-Learning
 
-I have followed a playlist for this project. The playlist and the dataset links are given below:
+This project is all about detecting or predecting a tumor in the Brain. I have followed a playlist for this project. The playlist and the dataset links are given below:
 
 Deep Learning For Health Care👉🏻 https://www.youtube.com/playlist?list=PLWyN7K28ZraStL8fr0eQmr6VwAiahQStd
 
